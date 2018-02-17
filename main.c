@@ -21,12 +21,12 @@ INT_PTR CALLBACK DialogProc(
 		break;
 	}
 	return 0;
-
 }
 int main() {
 	CHAR szBuf[1024];
 	HWND hDlgModeless;
 	MSG msg;
+
 	LoadStringA(NULL,IDS_1,szBuf,sizeof(szBuf));
 	printf("IDS_1  =  %s\n", szBuf);
 
@@ -35,21 +35,16 @@ int main() {
 		printf("CreateDialog error %d\n",hDlgModeless);
 		return -1;
 	}
+
 	ShowWindow(hDlgModeless,SW_SHOW);
+
 	while (GetMessage (&msg, NULL, 0, 0))
-
 	{
-
 		if (hDlgModeless == 0 || !IsDialogMessage (hDlgModeless, &msg))
-
 		{
-
 			TranslateMessage (&msg) ;
-
 			DispatchMessage  (&msg) ;
-
 		}
-
 	}
 	return 0;
 }
