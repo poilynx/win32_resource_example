@@ -1,0 +1,18 @@
+#include "resource.h"
+#include <windows.h>
+STRINGTABLE
+BEGIN
+	IDS_1 "Hello World";
+END
+
+  
+IDD_ABOUT_DIALOG DIALOGEX 200, 200, 290, 59        //DIALOGEX RESOURCE  
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU  
+CAPTION "Dialog"        // CAPTION   STATEMENT  
+FONT 8, "MS Shell Dlg", 400, 0, 0x1        // FONT  STATEMENT  
+BEGIN  
+	LTEXT           "Windows Resource Demo",3001,26,14,119,8,SS_NOPREFIX    //  CONTROL  
+	LTEXT           "Copyright (C) 2008",3002,26,30,119,8                        //  CONTROL  
+	DEFPUSHBUTTON   "OK",IDOK,234,14,32,14,WS_GROUP                //  CONTROL  
+	DEFPUSHBUTTON   "Quit",IDCANCEL,234,31,32,14,WS_GROUP            //   CONTROL  
+END  

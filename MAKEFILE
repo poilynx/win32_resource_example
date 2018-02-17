@@ -1,0 +1,14 @@
+SHELL=cmd.exe
+all: test.exe
+test.exe: main.obj main.res
+	link  main.obj main.res user32.lib /out:test.exe 
+main.obj: main.c resource.h
+	cl /c main.c /MD 
+main.res: resource.h main.rc
+	rc main.rc
+clean:
+	del test.exe
+	del main.res
+	del main.obj
+run:test.exe
+	start test.exe
